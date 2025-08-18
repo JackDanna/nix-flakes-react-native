@@ -1,7 +1,7 @@
 {
   description = "react-native via nix flakes";
 
-  inputs.nixpkgs.url = "nixpkgs/988cc958c57ce4350ec248d2d53087777f9e1949";
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   inputs.flake-utils.url = "github:numtide/flake-utils";
 
   outputs =
@@ -19,8 +19,9 @@
 
           config = 
           {
+            allowUnfree = true;
             android_sdk.accept_license = true; 
-            allowUnfreePredicate = pkg: builtins.elem (builtins.parseDrvName pkg.name).name
+            allowUnfreePredicate = pkg: builtins.elem (builtins.parseDrvName pkg.pname).name
             [
                "androidsdk"
             ];

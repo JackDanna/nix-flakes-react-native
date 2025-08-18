@@ -8,10 +8,11 @@
     packages = 
     [ 
       pkgs.android-tools 
-      pkgs.jdk11_headless 
-      pkgs.nodejs
+      pkgs.jdk17 
+      pkgs.nodejs_20
 
-      pkgs.nodePackages.react-native-cli
+      #pkgs.nodePackages.react-native-cli
+      pkgs.cmake
     ];
 
     ANDROID_SDK_ROOT = "${env-android.androidRootSdk}";
@@ -22,7 +23,7 @@
     shellHook = ''
       buildAndroidDebug ()
       {
-        react-native build-android --no-packager --extra-params --parallel
+        npx react-native build-android --no-packager --extra-params --parallel
       }
     '';
   };

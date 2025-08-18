@@ -8,10 +8,11 @@ let
   buildInputs = 
   [ 
     pkgs.gradle 
-    pkgs.jdk11_headless 
+    pkgs.jdk17
 
-    pkgs.nodejs
-    pkgs.nodePackages.react-native-cli 
+    pkgs.nodejs_20
+    #pkgs.nodePackages.react-native-cli
+    pkgs.cmake
   ];
 
   mkWithWarning = msg: args@{ ... }: pkgs.lib.warn msg (pkgs.stdenv.mkDerivation args);

@@ -12,10 +12,10 @@ rec {
 
   androidComposition = pkgs.androidenv.composeAndroidPackages {
     toolsVersion = "26.1.1";
-    platformToolsVersion = "33.0.3";
-    buildToolsVersions = [ "30.0.3" "${buildToolsVersion}" ];
+    #platformToolsVersion = "33.0.3";
+    buildToolsVersions = [ "33.0.1" ];
     includeEmulator = true;
-    emulatorVersion = "31.3.14";
+    #emulatorVersion = "31.3.14";
     platformVersions = [ "33" ];
     includeSources = false;
     includeSystemImages = false;
@@ -23,7 +23,8 @@ rec {
     abiVersions = [ "armeabi-v7a" "arm64-v8a" ];
     cmakeVersions = [ "3.18.1" ];
     includeNDK = true;
-    ndkVersions = ["22.1.7171670"];
+    #ndk.version = "27.1.12297006";
+    ndkVersions = ["27.1.12297006"];
     useGoogleAPIs = false;
     useGoogleTVAddOns = false;
     includeExtras = [

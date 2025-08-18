@@ -104,6 +104,8 @@
 
     ANDROID_SDK_ROOT = "${env-android.androidRootSdk}";
     ANDROID_NDK_ROOT = "${env-android.androidRootNdk}";
+    ANDROID_NDK_HOME = "${env-android.androidRootNdk}";
+    NDK_ROOT = "${env-android.androidRootNdk}";
 
     GRADLE_OPTS = "${env-android.aapt2Override}";
 

@@ -39,10 +39,11 @@
 
       in
       {
-        defaultPackage = builds.android-debug-react;
-
-        packages.android-debug-gradle = builds.android-debug-gradle;
-        packages.android-debug-react = builds.android-debug-react;
+        packages = {
+          default = builds.android-debug-react;
+          android-debug-gradle = builds.android-debug-gradle;
+          android-debug-react = builds.android-debug-react;
+        };
 
         devShells.default = pkgs.mkShell {
 

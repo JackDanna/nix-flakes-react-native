@@ -57,31 +57,11 @@
               vscodeExtensions =
                 with pkgs.vscode-extensions;
                 [
-
-                  ms-dotnettools.csdevkit
-                  ms-dotnettools.csharp
-                  #ms-dotnettools.vscode-dotnet-runtime
-
                   jnoortheen.nix-ide
                   mhutchie.git-graph
                   vscode-extensions.eamodio.gitlens
-
-                  # F# intellisense
-                  #ionide.ionide-fsharp
-                  #oldPkgs.vscode-extensions.ms-dotnettools.csharp # We need to make sure we use version 2.39.32 since there is a bug otherise: https://github.com/ionide/ionide-vscode-fsharp/issues/2039
-
-                  #bradlc.vscode-tailwindcss
-                  #vscodevim.vim
-                  #streetsidesoftware.code-spell-checker
                 ]
                 ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-
-                  {
-                    name = "vscode-dotnet-runtime";
-                    publisher = "ms-dotnettools";
-                    version = "2.3.7";
-                    sha256 = "sha256-Pe0rgs1vDbaOO178lB5P/Z+gqmf6LALIIZB3DntkmOc=";
-                  }
 
                   {
                     name = "copilot";

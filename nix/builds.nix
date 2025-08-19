@@ -21,20 +21,37 @@ let
 
 in
 {
-  debugBuild = mkWithWarningNotFunctional {
+  debugBuild = pkgs.buildNpmPackage {
     inherit name;
     inherit src;
-    inherit buildInputs;
+
+    # Hash generated from package-lock.json
+    npmDepsHash = "sha256-jCcswdnslYCkNOkEULwhLK0r4gmUGqfjjPqbT4uxDiE=";
+
+    nativeBuildInputs =
+      with pkgs;
+      [
+        gradle
+        jdk17
+        nodejs_20
+      ]
+      ++ buildInputs;
 
     # Disable automatic CMake configuration
     dontUseCmakeConfigure = true;
     dontUseNinjaBuild = true;
     dontUseNinjaInstall = true;
 
-    configurePhase = ''
+    # Don't run npm audit
+    npmFlags = [ "--ignore-scripts" ];
+
+    preConfigure = ''
       export ANDROID_HOME="${env-android.androidHome}"
       export ANDROID_SDK_ROOT="${env-android.androidRootSdk}"
       export ANDROID_NDK_ROOT="${env-android.androidRootNdk}"
+
+      # Set up Gradle to work offline
+      export GRADLE_USER_HOME="$(mktemp -d)"
 
       # Make gradlew executable
       chmod +x android/gradlew
@@ -42,14 +59,25 @@ in
 
     buildPhase = ''
       cd android
-      # Use system gradle instead of wrapper to avoid network download
-      gradle assembleDebug --offline --no-daemon
+
+      # Try to use system gradle with more aggressive offline settings
+      gradle assembleDebug \
+        --offline \
+        --no-daemon \
+        --no-build-cache \
+        --no-configuration-cache \
+        --warning-mode=none
     '';
 
     installPhase = ''
       mkdir -p $out
       cp android/app/build/outputs/apk/debug/app-debug.apk $out/
     '';
+
+    meta = {
+      description = "React Native Android Debug Build";
+      platforms = pkgs.lib.platforms.linux;
+    };
   };
 
   # {{{ TODO

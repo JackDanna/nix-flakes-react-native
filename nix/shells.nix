@@ -16,6 +16,7 @@
       # #nodejs_20
       gnome-terminal
       bashInteractive
+      nixfmt
       (vscode-with-extensions.override  {
         vscode = pkgs.vscode;
         vscodeExtensions = with pkgs.vscode-extensions; [

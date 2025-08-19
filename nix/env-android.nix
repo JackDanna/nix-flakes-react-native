@@ -3,11 +3,6 @@
 }:
 
 rec {
-  androidHome = "${androidComposition.androidsdk}/libexec/android-sdk";
-  androidRootSdk = "${androidComposition.androidsdk}/libexec/android-sdk";
-  androidRootNdk = "${androidRootSdk}/ndk-bundle";
-  aapt2Override = "-Dorg.gradle.project.android.aapt2FromMavenOverride=${androidRootSdk}/build-tools/${buildToolsVersion}/aapt2";
-
   buildToolsVersion = "36.0.0";
 
   androidComposition = pkgs.androidenv.composeAndroidPackages {
@@ -44,4 +39,9 @@ rec {
       "extras;google;gcm"
     ];
   };
+
+  androidHome = "${androidComposition.androidsdk}/libexec/android-sdk";
+  androidRootSdk = "${androidComposition.androidsdk}/libexec/android-sdk";
+  androidRootNdk = "${androidRootSdk}/ndk-bundle";
+  aapt2Override = "-Dorg.gradle.project.android.aapt2FromMavenOverride=${androidRootSdk}/build-tools/${buildToolsVersion}/aapt2";
 }

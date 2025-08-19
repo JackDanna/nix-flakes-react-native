@@ -6,13 +6,12 @@ let
   name = "example-build-0.0.1";
   src = ../reactNativeExample;
 
-  buildInputs = [
-    pkgs.gradle
-    pkgs.jdk17
-
-    pkgs.nodejs_20
-    #pkgs.nodePackages.react-native-cli
-    pkgs.cmake
+  buildInputs = with pkgs; [
+    gradle
+    jdk17
+    nodejs_20
+    #nodePackages.react-native-cli
+    cmake
   ];
 
   mkWithWarning = msg: args@{ ... }: pkgs.lib.warn msg (pkgs.stdenv.mkDerivation args);

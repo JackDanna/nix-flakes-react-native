@@ -40,7 +40,7 @@
       in
       {
         packages = {
-          default = builds.android-debug-react;
+          default = builds.debugBuild;
           android-debug-gradle = builds.android-debug-gradle;
           android-debug-react = builds.android-debug-react;
         };

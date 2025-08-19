@@ -4,14 +4,14 @@
 }:
 let
   name = "example-build-0.0.1";
-  src = ../reactNativeExample;
+  src = ../Temp;
 
   buildInputs = with pkgs; [
     gradle
     jdk17
     nodejs_20
     #nodePackages.react-native-cli
-    cmake
+    # cmake  # Removed - causes CMake auto-configuration which fails for React Native projects
   ];
 
   mkWithWarning = msg: args@{ ... }: pkgs.lib.warn msg (pkgs.stdenv.mkDerivation args);
@@ -21,6 +21,37 @@ let
 
 in
 {
+  debugBuild = mkWithWarningNotFunctional {
+    inherit name;
+    inherit src;
+    inherit buildInputs;
+
+    # Disable automatic CMake configuration
+    dontUseCmakeConfigure = true;
+    dontUseNinjaBuild = true;
+    dontUseNinjaInstall = true;
+
+    configurePhase = ''
+      export ANDROID_HOME="${env-android.androidHome}"
+      export ANDROID_SDK_ROOT="${env-android.androidRootSdk}"
+      export ANDROID_NDK_ROOT="${env-android.androidRootNdk}"
+
+      # Make gradlew executable
+      chmod +x android/gradlew
+    '';
+
+    buildPhase = ''
+      cd android
+      # Use system gradle instead of wrapper to avoid network download
+      gradle assembleDebug --offline --no-daemon
+    '';
+
+    installPhase = ''
+      mkdir -p $out
+      cp android/app/build/outputs/apk/debug/app-debug.apk $out/
+    '';
+  };
+
   # {{{ TODO
   # To get a bit further, you can modify `gradle-wrapper.properties` to include
   # a local gradle .zip. This avoids java erroring out when attempting to download this gradle version

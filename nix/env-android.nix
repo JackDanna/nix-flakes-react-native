@@ -11,7 +11,7 @@ rec {
     buildToolsVersions = [
       "33.0.1"
       "35.0.0"
-      "36.0.0"
+      buildToolsVersion
     ];
     includeEmulator = true;
     #emulatorVersion = "31.3.14";

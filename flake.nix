@@ -1,5 +1,5 @@
 {
-  description = "react-native via nix flakes";
+  description = "React Native via Nix Flakes";
 
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   inputs.flake-utils.url = "github:numtide/flake-utils";

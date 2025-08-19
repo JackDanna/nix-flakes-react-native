@@ -1,0 +1,10 @@
+{
+    "nix.formatterPath": "nixfmt", // or "alejandra"
+    // or pass full list of args like below
+    // "nix.formatterPath": ["treefmt", "--stdin", "{file}"]
+    
+    // Format on save configuration for Nix files
+    "[nix]": {
+        "editor.formatOnSave": true
+    }
+}

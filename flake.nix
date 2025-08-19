@@ -3,12 +3,14 @@
 
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   inputs.flake-utils.url = "github:numtide/flake-utils";
+  inputs.build-gradle-application.url = "github:raphiz/buildGradleApplication";
 
   outputs =
     {
       self,
       nixpkgs,
       flake-utils,
+      build-gradle-application,
     }:
     flake-utils.lib.eachDefaultSystem (
       system:
@@ -16,6 +18,7 @@
       let
         pkgs = import nixpkgs {
           inherit system;
+          overlays = [ build-gradle-application.overlays.default ];
 
           config = {
             allowUnfree = true;

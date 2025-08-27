@@ -53,6 +53,7 @@
           buildInputs = with pkgs; [
 
             # vscode IDE with all extensions needed
+            dotnet-sdk_8
             gnome-terminal
             bashInteractive
             nixfmt

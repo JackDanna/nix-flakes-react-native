@@ -1,0 +1,88 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/jackd/repos/nix-flakes-react-native/Temp/src/App.fable-temp.csproj": {}
+  },
+  "projects": {
+    "/home/jackd/repos/nix-flakes-react-native/Temp/src/App.fable-temp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/jackd/repos/nix-flakes-react-native/Temp/src/App.fable-temp.csproj",
+        "projectName": "App.fable-temp",
+        "projectPath": "/home/jackd/repos/nix-flakes-react-native/Temp/src/App.fable-temp.csproj",
+        "packagesPath": "/home/jackd/.nuget/packages/",
+        "outputPath": "/home/jackd/repos/nix-flakes-react-native/Temp/src/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/jackd/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "Fable.Core": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            },
+            "Fable.Elmish": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Fable.Elmish.React": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Fable.React": {
+              "target": "Package",
+              "version": "[9.4.0, )"
+            },
+            "Fable.React.Native": {
+              "target": "Package",
+              "version": "[4.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/nix/store/23i6fg7iwfwn089ckhy4v3x4yvrqydpk-dotnet-sdk-8.0.413/share/dotnet/sdk/8.0.413/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

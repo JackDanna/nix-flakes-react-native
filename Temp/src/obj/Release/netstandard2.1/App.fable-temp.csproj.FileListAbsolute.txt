@@ -1,0 +1,4 @@
+/home/jackd/repos/nix-flakes-react-native/Temp/src/bin/Release/netstandard2.1/App.fable-temp.deps.json
+/home/jackd/repos/nix-flakes-react-native/Temp/src/obj/Release/netstandard2.1/App.fable-temp.GeneratedMSBuildEditorConfig.editorconfig
+/home/jackd/repos/nix-flakes-react-native/Temp/src/obj/Release/netstandard2.1/App.fable-temp.AssemblyInfoInputs.cache
+/home/jackd/repos/nix-flakes-react-native/Temp/src/obj/Release/netstandard2.1/App.fable-temp.AssemblyInfo.cs

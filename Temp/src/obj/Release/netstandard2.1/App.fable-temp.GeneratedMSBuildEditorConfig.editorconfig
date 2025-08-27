@@ -1,0 +1,5 @@
+is_global = true
+build_property.RootNamespace = App.fable-temp
+build_property.ProjectDir = /home/jackd/repos/nix-flakes-react-native/Temp/src/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

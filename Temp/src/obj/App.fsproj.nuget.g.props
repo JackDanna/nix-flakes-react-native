@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <RestoreSuccess Condition=" '$(RestoreSuccess)' == '' ">True</RestoreSuccess>
+    <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
+    <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
+    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">/home/jackd/.nuget/packages/</NuGetPackageRoot>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">/home/jackd/.nuget/packages/</NuGetPackageFolders>
+    <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
+    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.11.1</NuGetToolVersion>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <SourceRoot Include="/home/jackd/.nuget/packages/" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Content Include="$(NuGetPackageRoot)fable.core/4.5.0/contentFiles/any/netstandard2.0/CHANGELOG.md" Condition="Exists('$(NuGetPackageRoot)fable.core/4.5.0/contentFiles/any/netstandard2.0/CHANGELOG.md')">
+      <NuGetPackageId>Fable.Core</NuGetPackageId>
+      <NuGetPackageVersion>4.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>CHANGELOG.md</Link>
+    </Content>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgFSharp_Core Condition=" '$(PkgFSharp_Core)' == '' ">/home/jackd/.nuget/packages/fsharp.core/8.0.403</PkgFSharp_Core>
+    <PkgFable_Core Condition=" '$(PkgFable_Core)' == '' ">/home/jackd/.nuget/packages/fable.core/4.5.0</PkgFable_Core>
+    <PkgFable_React Condition=" '$(PkgFable_React)' == '' ">/home/jackd/.nuget/packages/fable.react/9.4.0</PkgFable_React>
+    <PkgFable_React_Native Condition=" '$(PkgFable_React_Native)' == '' ">/home/jackd/.nuget/packages/fable.react.native/4.0.0</PkgFable_React_Native>
+    <PkgFable_Elmish Condition=" '$(PkgFable_Elmish)' == '' ">/home/jackd/.nuget/packages/fable.elmish/5.0.2</PkgFable_Elmish>
+    <PkgFable_Elmish_React Condition=" '$(PkgFable_Elmish_React)' == '' ">/home/jackd/.nuget/packages/fable.elmish.react/5.0.0</PkgFable_Elmish_React>
+  </PropertyGroup>
+</Project>
